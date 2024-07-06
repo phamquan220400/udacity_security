@@ -19,7 +19,6 @@
   </properties>
 
   <dependencies>
-    <!-- add your dependencies here! -->
     <!-- https://mvnrepository.com/artifact/com.miglayout/miglayout-swing -->
     <dependency>
       <groupId>com.miglayout</groupId>

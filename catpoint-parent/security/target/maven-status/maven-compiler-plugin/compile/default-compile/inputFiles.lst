@@ -1,0 +1,17 @@
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/application/DisplayPanel.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/data/PretendDatabaseSecurityRepositoryImpl.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/application/ImagePanel.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/data/ArmingStatus.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/data/SensorType.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/application/StatusListener.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/module-info.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/service/SecurityService.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/application/CatpointGui.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/application/SensorPanel.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/Main.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/application/CatpointApp.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/data/Sensor.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/application/ControlPanel.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/data/AlarmStatus.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/service/StyleService.java
+/home/samuel/java/uda-secutity/catpoint-parent/security/src/main/java/com/uda/security/data/SecurityRepository.java

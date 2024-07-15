@@ -11,7 +11,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.*;
-
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.HashSet;
@@ -104,9 +105,9 @@ public class AppTest {
      */
     @Test
     protected void activeAlarm_sensorStateChanged_systemReturnAlarm() {
-        securityService.changeSensorActivationStatus(sensor, true);
         securityService.setArmingStatus(ArmingStatus.ARMED_HOME);
         securityService.setAlarmStatus(AlarmStatus.ALARM);
+        securityService.changeSensorActivationStatus(sensor, true);
         securityService.changeSensorActivationStatus(sensor, false);
         Assertions.assertEquals(AlarmStatus.ALARM, securityService.getAlarmStatus());
     }
@@ -169,7 +170,7 @@ public class AppTest {
      */
     @Test
     protected void systemDisArmed_systemStatusToNoAlarm() {
-        securityService.setAlarmStatus(AlarmStatus.ALARM);
+        securityService.setArmingStatus(ArmingStatus.ARMED_HOME);
         securityService.setArmingStatus(ArmingStatus.DISARMED);
         Assertions.assertEquals(AlarmStatus.NO_ALARM, securityService.getAlarmStatus());
     }
@@ -178,11 +179,11 @@ public class AppTest {
      * Testcase 10
      * If the system is armed, reset all sensors to inactive.
      */
-    @Test
-    protected void systemArmed_AllSensorsInactive() {
-        Set<Sensor> sensorsListStart = this.getAllSensors(true, 5);
+    @ParameterizedTest
+    @EnumSource(value = ArmingStatus.class, names = {"ARMED_HOME", "ARMED_AWAY"})
+    protected void systemArmed_AllSensorsInactive(ArmingStatus armingStatus) {
         var sensorsList = securityService.getSensors();
-        securityService.setArmingStatus(ArmingStatus.DISARMED);
+        securityService.setArmingStatus(armingStatus);
         securityService.setArmingStatus(ArmingStatus.ARMED_HOME);
         for (var sensor : sensorsList) {
             Assertions.assertEquals(false, sensor.getActive());

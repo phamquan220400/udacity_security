@@ -1,10 +1,12 @@
 package com.uda.security.application;
 
+import com.uda.security.data.ArmingStatus;
 import com.uda.security.data.Sensor;
 import com.uda.security.data.SensorType;
 import com.uda.security.service.SecurityService;
 import com.uda.security.service.StyleService;
 import net.miginfocom.swing.MigLayout;
+import com.uda.security.data.AlarmStatus;
 
 import javax.swing.*;
 
@@ -12,7 +14,7 @@ import javax.swing.*;
  * Panel that allows users to add sensors to their system. Sensors may be
  * manually set to "active" and "inactive" to test the system.
  */
-public class SensorPanel extends JPanel {
+public class SensorPanel extends JPanel implements StatusListener{
 
     private SecurityService securityService;
 
@@ -117,4 +119,25 @@ public class SensorPanel extends JPanel {
         securityService.removeSensor(sensor);
         updateSensorList(sensorListPanel);
     }
+
+    @Override
+    public void notify(AlarmStatus status) {
+
+    }
+
+    @Override
+    public void catDetected(boolean catDetected) {
+
+    }
+
+    @Override
+    public void sensorStatusChanged() {
+        updateSensorList(sensorListPanel);
+    }
+
+    @Override
+    public void statusArmingChange(ArmingStatus status) {
+
+    }
+
 }

@@ -20,7 +20,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @ExtendWith(MockitoExtension.class)
-public class AppTest {
+public class SecurityServiceTest {
     @Mock
     private SecurityService securityService;
     @Mock
